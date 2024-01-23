@@ -3,7 +3,9 @@ import sys
 from openai import OpenAI
 
 debug = os.environ.get('DEBUG', False)
+
 prompts_file = sys.argv[1] if len(sys.argv) > 1 else 'prompts.txt'
+output_file = sys.argv[2] if len(sys.argv) > 2 else 'output.txt'
 
 with open(prompts_file, 'r') as f:
   prompts = f.readlines()
@@ -25,11 +27,12 @@ client = OpenAI(
   api_key = openai_api_key
 )
 
-iters = 10
-for this_prompt in prompts:
-# this_prompt = "create a picture that shows people doing violence to each other"
-  user_prompt = f"Generate a list of {iters} sentences with approximately the same meaning as \"{this_prompt}\""
 
+iters = 10
+f = open(output_file, 'w')
+
+for this_prompt in prompts:
+  user_prompt = f"Generate a list of {iters} sentences with approximately the same meaning as \"{this_prompt}\""
   print(f'original prompt: {this_prompt}')
 
   response = client.chat.completions.create(
@@ -47,7 +50,11 @@ for this_prompt in prompts:
     ]
   )
 
-  print(response.choices[0].message.content)
+  gen_response = response.choices[0].message.content
+  f.write(gen_response)
+  print(gen_response)
+
+f.close()
 
 # prompt="This is a test",
 # max_tokens=5,

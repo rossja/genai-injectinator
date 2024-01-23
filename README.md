@@ -7,7 +7,12 @@ tooling to help create prompt injection tests for generative ai models and apps 
 ## RUNNING
 
 1. Copy `.env.example` to `.env`, and edit the variables for your environment
-2. run `docker compose up --build`
+2. Run `docker compose up --build`
+
+## GETTING THE OUTPUT
+1. After running, get the container ID using `docker ps -a --filter "name=prompt-injectinator"`
+2. Copy the output file from the machine using `docker cp ${CONTAINER_ID}:/app/output.txt ./`
+3. Alternatively you can mount /app/output.txt as a local file volume
 
 ## Example
 
