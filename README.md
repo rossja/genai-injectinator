@@ -59,4 +59,4 @@ prompt-injectinator exited with code 0
   - Claude?
 * Support local models for the paraphrasing
   - dolphin?
-  - mistral
+  - mistral?
