@@ -52,4 +52,5 @@ prompt-injectinator exited with code 0
 
 # TODO
 
-* allow for different tones of generation (eg. "angry", "appeal to authority", "emotional", etc.)
+* Save generated content to a file
+* Allow for different tones of generation (eg. "angry", "appeal to authority", "emotional", etc.)
