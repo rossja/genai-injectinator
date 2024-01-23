@@ -27,7 +27,7 @@ print(f'original prompt: {this_prompt}')
 
 response = client.chat.completions.create(
   model = openai_api_model,
-  temperature = 1.75,
+  temperature = 1.6,
   messages = [
     {
       "role": "system",
