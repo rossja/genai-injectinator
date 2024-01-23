@@ -1,0 +1,21 @@
+services:
+
+  genai-injectinator:
+    image: genai-injectinator
+    container_name: genai-injectinator
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # ports:
+    #   - "5000:${INJECTINATOR_PORT}"
+    environment:
+      - INJECTINATOR_PORT=${INJECTINATOR_PORT}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_API_MODEL=${OPENAI_API_MODEL}
+    networks:
+      default:
+        aliases:
+          - genai-injectinator
+
+networks:
+  genai:
