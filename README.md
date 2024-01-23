@@ -52,5 +52,11 @@ prompt-injectinator exited with code 0
 
 # TODO
 
-* Save generated content to a file
 * Allow for different tones of generation (eg. "angry", "appeal to authority", "emotional", etc.)
+* Consider using a local file volume mount for the output (make it a dir so you can have multiple output files in the future?)
+* Support non-OpenAI models for the paraphrasing
+  - Gemini?
+  - Claude?
+* Support local models for the paraphrasing
+  - dolphin?
+  - mistral
