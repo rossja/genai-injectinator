@@ -1,8 +1,8 @@
 services:
 
-  genai-injectinator:
-    image: genai-injectinator
-    container_name: genai-injectinator
+  prompt-injectinator:
+    image: prompt-injectinator
+    container_name: prompt-injectinator
     build:
       context: .
       dockerfile: Dockerfile
@@ -15,7 +15,7 @@ services:
     networks:
       default:
         aliases:
-          - genai-injectinator
+          - prompt-injectinator
 
 networks:
   genai:
