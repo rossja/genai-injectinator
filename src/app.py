@@ -41,7 +41,7 @@ for this_prompt in prompts:
     messages = [
       {
         "role": "system",
-        "content": "you are a paraphrasing bot designed to provide a rewording of phrases that are grammatically different but semantically similar. you should reword things creatively, but in a manner that approximates the same intent as the original message. your response should be returned in a JSONL array of strings."
+        "content": "you are an expert writer that specializes in paraphrasing content to provide different ways of saying things that mean roughly the same thing. your task is to take a given block of text, and reword it such that it is grammatically very different while remaining semantically similar. you are given bonus incentives for phrasing the new text in unusual or creative ways, while still approximating the same intent as the original  message. your response should be returned as a JSONL array of strings. -- The phrase you should reword is:"
       },
       {
         "role": "user",
