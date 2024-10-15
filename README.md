@@ -16,7 +16,7 @@ asking it to generate 10 variations of the line (set in the `iters` var in `src/
 ## RUNNING
 
 1. Copy `.env.example` to `.env`, and edit the variables for your environment
-2. Edit `src/prompts.txt` to include whatever prompts you want to create mutations for
+2. Edit `src/prompts.txt` to include whatever prompts you want to create mutations for (there's an example in the same directory)
 2. Run `docker compose up --build`
 
 ## GETTING THE OUTPUT
