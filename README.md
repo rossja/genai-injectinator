@@ -2,11 +2,21 @@
 
 # GENERATIVE AI PROMPT INJECTINATOR
 
-tooling to help create prompt injection tests for generative ai models and apps that consume their content
+tooling to help create prompt injection tests for generative ai models and apps that consume their content.
+
+## OVERVIEW
+
+the process is as follows:
+
+* a list of attack prompts is provided (in `src/prompts.txt`)
+* for each line in the prompts.txt file, a call is made to the OpenAI API
+asking it to generate 10 variations of the line (set in the `iters` var in `src/app.py`)
+* the output is writtent to a file which can be copied from the docker container
 
 ## RUNNING
 
 1. Copy `.env.example` to `.env`, and edit the variables for your environment
+2. Edit `src/prompts.txt` to include whatever prompts you want to create mutations for
 2. Run `docker compose up --build`
 
 ## GETTING THE OUTPUT
@@ -52,6 +62,7 @@ prompt-injectinator exited with code 0
 
 # TODO
 
+* Surface the number of rewrites (iters) as a variable the user can change at runtime
 * Allow for different tones of generation (eg. "angry", "appeal to authority", "emotional", etc.)
 * Consider using a local file volume mount for the output (make it a dir so you can have multiple output files in the future?)
 * Support non-OpenAI models for the paraphrasing
